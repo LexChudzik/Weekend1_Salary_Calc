@@ -32,6 +32,17 @@ function addEmployee(event) {
     console.log(employeeArray);
 } // end addEmployee
 
+//find monthly cost
+function monthlyCost(array) {
+    const months = 12;
+    let annualCost = 0;
+    for (let i = 0; i < array.length; i++) {
+        annualCost += array[i].salary;
+    }
+    let monthlyCost = annualCost / months;
+    return monthlyCost;
+} //end monthlyCost
+
 //need to : clear input when submitted
     //push to table
     //calculate monthly cost and add to DOM
