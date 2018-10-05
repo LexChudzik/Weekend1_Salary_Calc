@@ -19,6 +19,7 @@ function onReady() {
     $('#addEmployee').on('click', addEmployee);
 }
 
+//add input to array
 function addEmployee(event) {
     event.preventDefault();
     let firstNameIn = $('#firstName').val();
@@ -29,4 +30,10 @@ function addEmployee(event) {
     let newEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, titleIn, salaryIn);
     employeeArray.push(newEmployee);
     console.log(employeeArray);
-}
+} // end addEmployee
+
+//need to : clear input when submitted
+    //push to table
+    //calculate monthly cost and add to DOM
+    //red if over budget
+    //delete
