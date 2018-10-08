@@ -60,6 +60,21 @@ function showArray() {
         <td>${employee.salary}</td>
         <td><button class="deleteButton">Delete</button></td></tr>`)
     }
+    //update the monthly total
+    let total = monthlyCost(employeeArray);
+    total = total.toFixed(2);
+    $('#monthlyCost').empty();
+    $('#monthlyCost').append(`Total Monthly: $ ${total}`);
+    
+    //see if we are overbudget, add or remove red background
+   let maxCost = 20000
+
+    if (total > maxCost && $('#monthlyCost').hasClass('red')==false) {
+        $('#monthlyCost').addClass('red'); }
+        else if (total<=maxCost && $('#monthlyCost').hasClass('red')==true) {
+        $('#monthlyCost').removeClass('red');
+    } //end if statement
+
 } //end showArray
 
 //delete employee on button press
@@ -78,6 +93,5 @@ function deleteEmployee() {
 
 
 //need to : clear input when submitted
-    //calculate monthly cost and add to DOM
     //red if over budget
     //delete
