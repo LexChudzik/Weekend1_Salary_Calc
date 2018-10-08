@@ -1,3 +1,40 @@
 .red {
     background-color: red;
 }
+
+body {
+    background-color: #f0f0f0;
+    color: #1b1e1e;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    background-color: #c5d5c5;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    background-color: #e3e0cc;
+}
+
+td, th, table {
+    border: 1px solid #7698b3;
+}
+
+th {
+    background-color: #9fa9a3;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #d8d4f2;
+}
+
+#monthlyCost {
+    text-align: right;
+}
+

@@ -30,6 +30,7 @@ function addEmployee(event) {
     let salaryIn = $('#salary').val();
     let newEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, titleIn, salaryIn);
     employeeArray.push(newEmployee);
+    $('#inputs')[0].reset();
     console.log(employeeArray);
     showArray();
 } // end addEmployee
