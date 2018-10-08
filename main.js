@@ -17,6 +17,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('jQ');
     $('#addEmployee').on('click', addEmployee);
+    $('.deleteButton').on('click', deleteEmployee);
 }
 
 //add input to array
@@ -30,18 +31,37 @@ function addEmployee(event) {
     let newEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, titleIn, salaryIn);
     employeeArray.push(newEmployee);
     console.log(employeeArray);
+    showArray();
 } // end addEmployee
 
 //find monthly cost
 function monthlyCost(array) {
     const months = 12;
     let annualCost = 0;
-    for (let i = 0; i < array.length; i++) {
-        annualCost += array[i].salary;
+    parseFloat(annualCost);
+    for (const employee of employeeArray) {
+        annualCost += parseFloat(employee.salary);
     }
     let monthlyCost = annualCost / months;
     return monthlyCost;
 } //end monthlyCost
+
+function showArray() {
+    console.log('show');
+    $('#table').empty();
+    for (const employee of employeeArray) {
+        console.log(employee);
+        $('#table').append(`<tr>
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td>${employee.idNumber}</td>
+        <td>${employee.title}</td>
+        <td>${employee.salary}</td>
+        <td><button class="deleteButton">Delete</button></td></tr>`)
+    }
+} //end showArray
+
+
 
 //need to : clear input when submitted
     //push to table
