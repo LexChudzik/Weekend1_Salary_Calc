@@ -17,7 +17,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('jQ');
     $('#addEmployee').on('click', addEmployee);
-    $('.deleteButton').on('click', deleteEmployee);
+    $('#tableBody').on('click', '.deleteButton', deleteEmployee);
 }
 
 //add input to array
@@ -46,25 +46,38 @@ function monthlyCost(array) {
     return monthlyCost;
 } //end monthlyCost
 
+//dispay array in table
 function showArray() {
     console.log('show');
-    $('#table').empty();
+    $('#tableBody').empty();
     for (const employee of employeeArray) {
         console.log(employee);
-        $('#table').append(`<tr>
+        $('#tableBody').append(`<tr>
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
-        <td>${employee.idNumber}</td>
+        <td class="idNumber">${employee.idNumber}</td>
         <td>${employee.title}</td>
         <td>${employee.salary}</td>
         <td><button class="deleteButton">Delete</button></td></tr>`)
     }
 } //end showArray
 
+//delete employee on button press
+function deleteEmployee() {
+    console.log('delete');
+    let idDelete = $(this).closest('tr').find('.idNumber').text();
+    for (let i = 0; i < employeeArray.length; i++) {
+        const employee = employeeArray[i];
+        if (employee.idNumber == idDelete) {
+            employeeArray.splice(i,1)
+        }
+    }//end for loop
+    showArray(); //update table
+}//end deleteArray
+
 
 
 //need to : clear input when submitted
-    //push to table
     //calculate monthly cost and add to DOM
     //red if over budget
     //delete
