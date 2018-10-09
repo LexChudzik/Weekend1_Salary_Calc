@@ -90,9 +90,3 @@ function deleteEmployee() {
     }//end for loop
     showArray(); //update table
 }//end deleteArray
-
-
-
-//need to : clear input when submitted
-    //red if over budget
-    //delete
