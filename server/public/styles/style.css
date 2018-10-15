@@ -21,20 +21,11 @@ table {
     background-color: #e3e0cc;
 }
 
-td, th, table {
-    border: 1px solid #7698b3;
-}
-
-th {
-    background-color: #9fa9a3;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #d8d4f2;
-}
-
 #monthlyCost {
     text-align: right;
+}
+
+h2 {
+    margin: 20px;
 }
 

@@ -59,7 +59,7 @@ function showArray() {
         <td class="idNumber">${employee.idNumber}</td>
         <td>${employee.title}</td>
         <td>${employee.salary}</td>
-        <td><button class="deleteButton">Delete</button></td></tr>`)
+        <td><button class="deleteButton btn-danger">Delete</button></td></tr>`)
     }
     //update the monthly total
     let total = monthlyCost(employeeArray);
