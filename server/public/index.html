@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Salary Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
     <script src="vendors/jquery-3.3.1.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/client.js"></script>
 </head>
 <body>
     <h1>Salary Calculator</h1>
-    <div>
+    <div class="container">
         <h2>Add Employee</h2>
         <form id="inputs">
             <input id="firstName" placeholder="First Name" type="text">
@@ -19,12 +20,12 @@
             <input id="idNumber" placeholder="ID" type="text">
             <input id="title" placeholder="Title" type="text">
             <input id="salary" placeholder="Annual Salary" type="text">
-            <button id="addEmployee">Submit</button>
+            <button class="btn-primary" id="addEmployee">Submit</button>
         </form>
     </div>
-    <div>
+    <div class="container">
         <h2>Employees</h2>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>First Name</th>
